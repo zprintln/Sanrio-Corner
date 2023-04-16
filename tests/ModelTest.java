@@ -13,21 +13,22 @@ public class ModelTest {
   @Before
   public void setUp(){
 
+
   }
 
   @Test
   public void testRandomMsgGenerator() {
-    assertEquals("Test string", modelTest.randomMsgGenerator());
+    assertEquals("Be yourself like Hello Kitty and let your uniqueness shine!", modelTest.randomMsgGenerator());
   }
   @Test
   public void testGetPositiveMsg() {
-    assertEquals("Test string", modelTest.getPositiveMsg());
+    assertEquals("Be yourself like Hello Kitty and let your uniqueness shine!", modelTest.getPositiveMsg());
   }
-
 
 
   @Test
   public void getCharacter() {
+
   }
 
   @Test
