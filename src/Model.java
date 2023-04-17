@@ -3,9 +3,8 @@ import java.util.Random;
 
 public class Model implements IModel{
   //declare an array to store answer choices in
-  private ArrayList<Character> scores = new ArrayList<>();
-  //declare a variable to represent the final test score
-  private char answer;
+  private ArrayList<Character> answers = new ArrayList<>();
+  //declare a variable to represent the final answers list
   private ArrayList<String> msgs = new ArrayList<>();
 
   /**
@@ -22,18 +21,6 @@ public class Model implements IModel{
     msgs.add("Live life to the fullest like Kuromi, and don't be afraid to take risks.");
     msgs.add(" Have a curious spirit like Badtz-Maru and always ask questions.");
     msgs.add(" Keep a positive attitude like Tuxedo Sam, and face challenges with grace.");
-
-  }
-  /**
-   * This method generates a random number
-   * @return a number
-   */
-  @Override
-  public int randNum(){
-    //generate a random number from 1-10
-    Random rand = new Random();
-    int num = rand.nextInt(10) + 1;
-    return num;
   }
 
   /**
@@ -46,48 +33,69 @@ public class Model implements IModel{
     return msgs.get(num);
   }
 
-
   /**
    * This method returns a character that most relates to the player
    * @return character
    */
   @Override
-  public String getCharacter(){
-    return "Test character";
+  public String getSanrioCharacter(){
+    char answer = getMostFrequentChar();
+    if(answer == 'h'){
+      return "Hello Kitty";
+    }
+    else if(answer == 'c'){
+      return "Cinnamoroll";
+    }
+    else if(answer == 'm'){
+      return "My Melody";
+    }
+    else if(answer == 'k'){
+      return "Kuromi";
+    }
+    return "No character match";
   }
   /**
    * This method stores the answer of the quiz questions
    */
   @Override
-  public void setScore(char ans){
+  public void setAnswers(char ans){
     //store the answer into the array
-    scores.add(ans);
+    answers.add(ans);
   }
 
   /**
-   * This method counts the instances of answer scores in a test and returns the character
+   * This method returns the list of
+   * @return
+   */
+  @Override
+  public ArrayList<Character> getAnswersList(){
+    return answers;
+  }
+
+  /**
+   * This method counts the instances of answer answers in a test and returns the character
    * with the highest frequency
    * @return answer
    */
   @Override
-  public char getHighestScore(ArrayList<Character> scores){
+  public char getMostFrequentChar(){
     int cinnamorollCount = 0;
     int hellokittyCount = 0;
     int kuromiCount = 0;
     int mymeloCount = 0;
     int maxCount = 0;
     char mostFrequentChar = ' ';
-    for(int i = 0; i < scores.size(); i++){
-        if(scores.get(i) == 'h'){
+    for(int i = 0; i < answers.size(); i++){
+        if(answers.get(i) == 'h'){
           hellokittyCount++;
         }
-        else if(scores.get(i) == 'c'){
+        else if(answers.get(i) == 'c'){
           cinnamorollCount++;
         }
-        else if(scores.get(i) == 'k'){
+        else if(answers.get(i) == 'k'){
           kuromiCount++;
         }
-        else if(scores.get(i) == 'm') {
+        else if(answers.get(i) == 'm') {
           mymeloCount++;
         }
         }//end for
@@ -110,9 +118,6 @@ public class Model implements IModel{
         }
         return mostFrequentChar;
     }
-
-
-
 
   }//end class
 
