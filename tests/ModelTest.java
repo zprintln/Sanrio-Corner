@@ -16,15 +16,28 @@ public class ModelTest {
 
   }
 
+  /**
+   * Test random number generator
+   */
   @Test
-  public void testRandomMsgGenerator() {
-    assertEquals("Be yourself like Hello Kitty and let your uniqueness shine!", modelTest.randomMsgGenerator());
+  public void testRandNum(){
+    int num = modelTest.randNum();
   }
   @Test
-  public void testGetPositiveMsg() {
-    assertEquals("Be yourself like Hello Kitty and let your uniqueness shine!", modelTest.getPositiveMsg());
+  public void testMsgGeneratorHK() {
+    int num = 0;
+    assertEquals("Be yourself like Hello Kitty and let your uniqueness shine!", modelTest.MsgGenerator(num));
   }
-
+  @Test
+  public void testMsgGeneratorKeroppi() {
+    int num = 5;
+    assertEquals("Embrace your creativity like Keroppi and explore new things.", modelTest.MsgGenerator(num));
+  }
+  @Test
+  public void testMsgGeneratorMyMelo() {
+    int num = 1;
+    assertEquals("Don't let bad days get you down, be as resilient as My Melody!", modelTest.MsgGenerator(num));
+  }
 
   @Test
   public void getCharacter() {
