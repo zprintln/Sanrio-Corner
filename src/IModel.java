@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public interface IModel {
-  String randomMsgGenerator();
-  String getPositiveMsg();
+  int randNum();
+  String MsgGenerator(int num);
   String getCharacter();
   char getHighestScore(ArrayList<Character> scores);
 

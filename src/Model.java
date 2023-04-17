@@ -24,33 +24,28 @@ public class Model implements IModel{
     msgs.add(" Keep a positive attitude like Tuxedo Sam, and face challenges with grace.");
 
   }
+  /**
+   * This method generates a random number
+   * @return a number
+   */
+  @Override
+  public int randNum(){
+    //generate a random number from 1-10
+    Random rand = new Random();
+    int num = rand.nextInt(10) + 1;
+    return num;
+  }
 
   /**
    * This method generates a random positive message from a list of messages
    * @return a random message
    */
   @Override
-  public String randomMsgGenerator(){
-    /*
-    //generate a random number from 1-10
-    Random rand = new Random();
-    int num = rand.nextInt(10) + 1;
+  public String MsgGenerator(int num){
     //return the message in position rand num
-    return msgs.get(num);
-    */
-    Random rand = new Random();
-    int num = rand.nextInt(1);
     return msgs.get(num);
   }
 
-  /**
-   * This method returns a positive message
-   * @return a positive message
-   */
-  @Override
-  public String getPositiveMsg(){
-    return randomMsgGenerator();
-  }
 
   /**
    * This method returns a character that most relates to the player
