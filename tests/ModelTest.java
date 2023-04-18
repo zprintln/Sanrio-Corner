@@ -16,12 +16,12 @@ public class ModelTest {
    */
   @Test
   public void testAnswerList(){
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('c');
-    ArrayList<Character> list = new ArrayList<>();
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(2);
+    modelTest.setAnswers(3);
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(1);
+    ArrayList<Integer> list = new ArrayList<>();
     list = modelTest.getAnswersList();
     for(int i = 0; i < list.size(); i++){
       System.out.println(list.get(i));
@@ -32,7 +32,7 @@ public class ModelTest {
    */
   @Test
   public void testAnswerOneItem(){
-    modelTest.setAnswers('m');
+    modelTest.setAnswers(3);
     System.out.println(modelTest.getAnswersList());
   }
 
@@ -57,7 +57,7 @@ public class ModelTest {
   }
 
   /**
-   * This method tests that the message generator returns the my melody message
+   * This method tests that the message generator returns a My Melody message
    */
   @Test
   public void testMsgGeneratorMyMelo() {
@@ -71,11 +71,11 @@ public class ModelTest {
    */
   @Test
   public void getCharacterHelloKitty() {
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('c');
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(4);
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(3);
     String character = modelTest.getSanrioCharacter();
     assertEquals("Hello Kitty", character);
   }
@@ -84,11 +84,11 @@ public class ModelTest {
    */
   @Test
   public void getCharacterMyMelody() {
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('c');
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(3);
+    modelTest.setAnswers(4);
+    modelTest.setAnswers(3);
+    modelTest.setAnswers(3);
     String character = modelTest.getSanrioCharacter();
     assertEquals("My Melody", character);
   }
@@ -97,11 +97,11 @@ public class ModelTest {
    */
   @Test
   public void getCharacterCinnamoroll() {
-    modelTest.setAnswers('c');
-    modelTest.setAnswers('c');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('c');
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(2);
+    modelTest.setAnswers(2);
+    modelTest.setAnswers(3);
+    modelTest.setAnswers(4);
     String character = modelTest.getSanrioCharacter();
     assertEquals("Cinnamoroll", character);
   }
@@ -110,96 +110,100 @@ public class ModelTest {
    */
   @Test
   public void getCharacterKuromi() {
-    modelTest.setAnswers('k');
-    modelTest.setAnswers('k');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('c');
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(4);
+    modelTest.setAnswers(4);
+    modelTest.setAnswers(3);
+    modelTest.setAnswers(2);
     String character = modelTest.getSanrioCharacter();
     assertEquals("Kuromi", character);
   }
+
+  /**
+   * This tests that answers are correctly set to the list of answers
+   */
   @Test
   public void testSetAnswers(){
-    modelTest.setAnswers('c');
-    modelTest.setAnswers('c');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('c');
-    char ans = modelTest.getMostFrequentChar();
-    assertEquals('c', ans);
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(2);
+    modelTest.setAnswers(4);
+    modelTest.setAnswers(2);
+    modelTest.setAnswers(3);
+    int ans = modelTest.getMostFrequentInt();
+    assertEquals(2, ans);
   }
 
   /**
    * This test checks that the highest character frequency is h
    */
   @Test
-  public void testGetMostFrequentCharH() {
+  public void testGetMostFrequentCharHelloKitty() {
     // Initialize the scores arrayList
-    modelTest.setAnswers('c');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('h');
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(4);
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(3);
 
-    // Call the getMostFrequentChar method and store the result in a variable
-    char result = modelTest.getMostFrequentChar();
+    // Call the getMostFrequentInt method and store the result in a variable
+    int result = modelTest.getMostFrequentInt();
 
     // Check that the result is the expected character
-    assertEquals('h', result);
+    assertEquals(1, result);
   }
   /**
    * This test checks that the highest character frequency is m
    */
   @Test
-  public void testGetMostFrequentCharM() {
+  public void testGetMostFrequentCharMyMelo() {
     // Initialize the scores arrayList
-    modelTest.setAnswers('k');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('c');
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(3);
+    modelTest.setAnswers(4);
+    modelTest.setAnswers(3);
+    modelTest.setAnswers(3);
 
-    // Call the getMostFrequentChar method and store the result in a variable
-    char result = modelTest.getMostFrequentChar();
+    // Call the getMostFrequentInt method and store the result in a variable
+    int result = modelTest.getMostFrequentInt();
 
     // Check that the result is the expected character
-    assertEquals('m', result);
+    assertEquals(3, result);
   }
   /**
    * This test checks that the highest character frequency is c
    */
   @Test
-  public void testGetMostFrequentCharC() {
+  public void testGetMostFrequentIntCinnamoroll() {
     // Initialize the scores arrayList
-    modelTest.setAnswers('c');
-    modelTest.setAnswers('c');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('m');
-    modelTest.setAnswers('c');
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(2);
+    modelTest.setAnswers(2);
+    modelTest.setAnswers(3);
+    modelTest.setAnswers(4);
 
-    // Call the getMostFrequentChar method and store the result in a variable
-    char result = modelTest.getMostFrequentChar();
+    // Call the getMostFrequentInt method and store the result in a variable
+    int result = modelTest.getMostFrequentInt();
 
     // Check that the result is the expected character
-    assertEquals('c', result);
+    assertEquals(2, result);
   }
   /**
    * This test checks that the highest character frequency is k
    */
   @Test
-  public void testGetMostFrequentCharK() {
+  public void testGetMostFrequentIntKuromi() {
     // Initialize the scores arrayList
-    modelTest.setAnswers('k');
-    modelTest.setAnswers('k');
-    modelTest.setAnswers('h');
-    modelTest.setAnswers('k');
-    modelTest.setAnswers('c');
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(4);
+    modelTest.setAnswers(4);
+    modelTest.setAnswers(1);
+    modelTest.setAnswers(4);
 
-    // Call the getMostFrequentChar method and store the result in a variable
-    char result = modelTest.getMostFrequentChar();
+    // Call the getMostFrequentInt method and store the result in a variable
+    int result = modelTest.getMostFrequentInt();
 
     // Check that the result is the expected character
-    assertEquals('k', result);
+    assertEquals(4, result);
   }
 
 
