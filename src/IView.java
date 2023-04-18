@@ -11,7 +11,7 @@ void printCharacterInfo(char choice);
 /**
  * This method prints a positive message
  */
-void printHappyMsg();
+void printHappyMsg(String msg);
 /**
  * This method prints a quiz prompt for fav food
  */
@@ -28,5 +28,10 @@ void printActivityMsg();
  * This method prints a quiz prompt for fav item
  */
 void printItemMsg();
+
+/**
+ * This method prompts a user for a number to print a positive message
+ */
+void happyMsgPrompt();
 
 }
