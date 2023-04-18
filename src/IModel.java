@@ -19,19 +19,19 @@ public interface IModel {
   /**
    * This method stores the inputted quiz answers
    */
-  void setAnswers(char ans);
+  void setAnswers(int ans);
 
   /**
    * This method returns the most common char type occurring in the user's quiz answer list
    * @return the most frequent char
    */
-  char getMostFrequentChar();
+  int getMostFrequentInt();
 
   /**
    * This method returns the complete list of user's quiz answers
    * @return entire answer list
    */
-  ArrayList<Character> getAnswersList();
+  ArrayList<Integer> getAnswersList();
 
 
 }

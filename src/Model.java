@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Model implements IModel{
   //declare an array to store answer choices in
-  private ArrayList<Character> answers = new ArrayList<>();
+  private ArrayList<Integer> answers = new ArrayList<>();
   //declare a variable to represent the final answers list
   private ArrayList<String> msgs = new ArrayList<>();
 
@@ -39,17 +39,17 @@ public class Model implements IModel{
    */
   @Override
   public String getSanrioCharacter(){
-    char answer = getMostFrequentChar();
-    if(answer == 'h'){
+    int answer = getMostFrequentInt();
+    if(answer == 1){
       return "Hello Kitty";
     }
-    else if(answer == 'c'){
+    else if(answer == 2){
       return "Cinnamoroll";
     }
-    else if(answer == 'm'){
+    else if(answer == 3){
       return "My Melody";
     }
-    else if(answer == 'k'){
+    else if(answer == 4){
       return "Kuromi";
     }
     return "No character match";
@@ -58,7 +58,7 @@ public class Model implements IModel{
    * This method stores the answer of the quiz questions
    */
   @Override
-  public void setAnswers(char ans){
+  public void setAnswers(int ans){
     //store the answer into the array
     answers.add(ans);
   }
@@ -68,7 +68,7 @@ public class Model implements IModel{
    * @return
    */
   @Override
-  public ArrayList<Character> getAnswersList(){
+  public ArrayList<Integer> getAnswersList(){
     return answers;
   }
 
@@ -78,45 +78,45 @@ public class Model implements IModel{
    * @return answer
    */
   @Override
-  public char getMostFrequentChar(){
+  public int getMostFrequentInt(){
     int cinnamorollCount = 0;
     int hellokittyCount = 0;
     int kuromiCount = 0;
     int mymeloCount = 0;
     int maxCount = 0;
-    char mostFrequentChar = ' ';
+    char mostFrequentInt = 0;
     for(int i = 0; i < answers.size(); i++){
-        if(answers.get(i) == 'h'){
+        if(answers.get(i) == 1){
           hellokittyCount++;
         }
-        else if(answers.get(i) == 'c'){
+        else if(answers.get(i) == 2){
           cinnamorollCount++;
         }
-        else if(answers.get(i) == 'k'){
-          kuromiCount++;
-        }
-        else if(answers.get(i) == 'm') {
+        else if(answers.get(i) == 3) {
           mymeloCount++;
+        }
+        else if(answers.get(i) == 4){
+          kuromiCount++;
         }
         }//end for
 
         if(hellokittyCount > maxCount) {
           maxCount = hellokittyCount;
-          mostFrequentChar = 'h';
+          mostFrequentInt = 1;
         }
         if(cinnamorollCount > maxCount) {
           maxCount = cinnamorollCount;
-          mostFrequentChar = 'c';
-        }
-        if(kuromiCount > maxCount) {
-          maxCount = kuromiCount;
-          mostFrequentChar = 'k';
+          mostFrequentInt = 2;
         }
         if(mymeloCount > maxCount) {
           maxCount = mymeloCount;
-          mostFrequentChar = 'm';
+          mostFrequentInt = 3;
         }
-        return mostFrequentChar;
+        if(kuromiCount > maxCount) {
+          maxCount = kuromiCount;
+          mostFrequentInt = 4;
+        }
+        return mostFrequentInt;
     }
 
   }//end class
