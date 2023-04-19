@@ -4,5 +4,7 @@ public interface IController {
   void findFavActivity();
   void findFavItem();
   void findCharacter();
+  void getCharacterInfo();
+
 }
 //NOTE: Make sure when taking in key inputs, to cast the input to lowercase

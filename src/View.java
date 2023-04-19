@@ -7,9 +7,26 @@ public class View implements IView {
    */
   @Override
   public void displayCharacter(String sanrio){
-    System.out.println("\nYour character is: " + sanrio);
+    System.out.println("\nYour Sanrio character is: " + sanrio);
     System.out.println("\n");
 
+  }
+  @Override
+  public void characterInfoPrompt(){
+    System.out.println("\nWhat character would you like to learn more about: \n"
+        + "\nHello Kitty   Enter: h\n"
+        + "Cinnamoroll   Enter: c\n"
+        + "Badtz-Maru    Enter: b\n"
+        + "My Melody     Enter: m\n"
+        + "Gudetama      Enter: g\n"
+        + "Kuromi        Enter: k\n"
+        + "Pompompurin   Enter: p\n"
+        + "Lala          Enter: l\n"
+        + "\nAnswer: \n");
+  }
+  @Override
+  public void inputErrorMsg(){
+    System.out.println("\nError: Enter a valid input\n");
   }
 
   /**
@@ -135,11 +152,12 @@ public class View implements IView {
    */
   @Override
   public void printFoodMsg(){
-    System.out.println("\nWhat is your favorite food: \n"
+    System.out.println("\nWhat is your favorite food? \n"
         + "Sushi - 1 \n"
         + "Cotton Candy - 2 \n"
         + "Strawberries - 3 \n"
-        + "Dark Chocolate - 4 \n");
+        + "Dark Chocolate - 4 \n"
+        + "\nAnswer: \n");
   }
 
   /**
@@ -147,11 +165,12 @@ public class View implements IView {
    */
   @Override
   public void printColorMsg(){
-    System.out.println("\nWhat is your favorite color: \n"
+    System.out.println("\nWhat is your favorite color? \n"
         + "Red - 1 \n"
         + "Blue - 2 \n"
         + "Pink - 3 \n"
-        + "Black -4 \n");
+        + "Black -4 \n"
+        + "\nAnswer: \n");
   }
 
   /**
@@ -159,11 +178,12 @@ public class View implements IView {
    */
   @Override
   public void printActivityMsg(){
-    System.out.println("\nWhat is your favorite activity: \n"
+    System.out.println("\nWhat is your favorite activity? \n"
         + "Baking - 1 \n"
         + "Exploring - 2 \n"
         + "Playing music - 3 \n"
-        + "Dress-up - 4 \n");
+        + "Dress-up - 4 \n"
+        + "\nAnswer: \n");
   }
 
   /**
@@ -171,11 +191,23 @@ public class View implements IView {
    */
   @Override
   public void printItemMsg(){
-    System.out.println("\nWhat is your favorite item: \n"
+    System.out.println("\nWhat is your favorite item? \n"
         + "Chessboard - 1 \n"
         + "Headphones - 2 \n"
         + "Lip gloss - 3 \n"
-        + "Skull - 4 \n");
+        + "Skull - 4 \n"
+        + "\nAnswer: \n");
   }
-
+  /**
+   * This method prints a quiz prompt for fav sport
+   */
+  @Override
+  public void printSportMsg(){
+    System.out.println("\nWhat is your favorite item? \n"
+        + "Chess - 1 \n"
+        + "Tennis - 2 \n"
+        + "Dance - 3 \n"
+        + "Foosball - 4 \n"
+        + "\nAnswer: \n");
+  }
 }

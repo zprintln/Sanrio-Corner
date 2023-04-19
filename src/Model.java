@@ -11,16 +11,16 @@ public class Model implements IModel{
    * This is a constructor of a model object
    */
   public Model(){
-    msgs.add("Be yourself like Hello Kitty and let your uniqueness shine!");
-    msgs.add("Don't let bad days get you down, be as resilient as My Melody!");
-    msgs.add("Spread love and kindness like Cinnamoroll's fluffy clouds!");
-    msgs.add("Like Little Twin Stars, share your dreams with those you trust.");
-    msgs.add(" Stay positive and keep smiling like Pompompurin!");
-    msgs.add("Embrace your creativity like Keroppi and explore new things.");
-    msgs.add("Be loyal and caring like Pochacco, and cherish your friendships.");
-    msgs.add("Live life to the fullest like Kuromi, and don't be afraid to take risks.");
-    msgs.add(" Have a curious spirit like Badtz-Maru and always ask questions.");
-    msgs.add(" Keep a positive attitude like Tuxedo Sam, and face challenges with grace.");
+    msgs.add("\nBe yourself like Hello Kitty and let your uniqueness shine!\n");
+    msgs.add("\nDon't let bad days get you down, be as resilient as My Melody!\n");
+    msgs.add("\nSpread love and kindness like Cinnamoroll's fluffy clouds!\n");
+    msgs.add("\nLike Little Twin Stars, share your dreams with those you trust.\n");
+    msgs.add("\nStay positive and keep smiling like Pompompurin!\n");
+    msgs.add("\nEmbrace your creativity like Keroppi and explore new things.\n");
+    msgs.add("\nBe loyal and caring like Pochacco, and cherish your friendships.\n");
+    msgs.add("\nLive life to the fullest like Kuromi, and don't be afraid to take risks.\n");
+    msgs.add("\nHave a curious spirit like Badtz-Maru and always ask questions.\n");
+    msgs.add("\nKeep a positive attitude like Tuxedo Sam, and face challenges with grace.\n");
   }
 
   /**

@@ -34,4 +34,18 @@ void printItemMsg();
  */
 void happyMsgPrompt();
 
+/**
+ * This method prints a quiz prompt for fav sport
+ */
+void printSportMsg();
+
+/**
+ * This method prompts a user to enter the character they want to learn more about
+ */
+void characterInfoPrompt();
+
+/**
+ * This method prints an error message if the input is incorrect
+ */
+void inputErrorMsg();
 }
