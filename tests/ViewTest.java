@@ -5,9 +5,6 @@ import org.junit.Test;
 
 public class ViewTest {
 View viewTest = new View();
-  @Before
-  public void setUp() {
-  }
   /**
    * This test prints the name of character that most relates to the user
    * In this case, Kuromi is printed
@@ -124,7 +121,7 @@ View viewTest = new View();
    * This test method prints the quiz prompt for fav food
    */
   @Test
-  public void printFoodMsg() {
+  public void testPrintFoodMsg() {
     viewTest.printFoodMsg();
   }
 
@@ -132,7 +129,7 @@ View viewTest = new View();
    * This test method prints the quiz prompt for fav color
    */
   @Test
-  public void printColorMsg() {
+  public void testPrintColorMsg() {
     viewTest.printColorMsg();
   }
 
@@ -140,7 +137,7 @@ View viewTest = new View();
    * This test method prints the quiz prompt for fav activity
    */
   @Test
-  public void printActivityMsg() {
+  public void testPrintActivityMsg() {
     viewTest.printActivityMsg();
   }
 
@@ -148,7 +145,31 @@ View viewTest = new View();
    * This test method prints the quiz prompt for fav item
    */
   @Test
-  public void printItemMsg() {
+  public void testPrintItemMsg() {
     viewTest.printItemMsg();
+  }
+
+  /**
+   * This test method prints the quiz prompt for fav sport
+   */
+  @Test
+  public void printSportMsg(){
+    viewTest.printSportMsg();
+  }
+
+  /**
+   * This test method prints the learn-more about a character information prompt
+   */
+  @Test
+  public void testCharacterInfoPrompt(){
+    viewTest.characterInfoPrompt();
+  }
+
+  /**
+   * This method tests printing an error message
+   */
+  @Test
+  public void testInputErrorMsg(){
+    viewTest.inputErrorMsg();
   }
 }
