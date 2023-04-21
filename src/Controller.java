@@ -1,25 +1,43 @@
+import java.io.PrintStream;
 import java.util.Scanner;
+import java.io.Reader;
+import java.io.StringReader;
 public class Controller implements IController{
-  Scanner scanner = new Scanner(System.in);
-  private Model model = new Model();
-  private View view = new View();
-  private int userNum;
-  public Controller(Model model, View view){
-    //instantiate a model and a view object
+
+ private int userNum;
+ private Model model;
+  private View view;
+  private Scanner scanner;
+  private StringReader in;
+  private PrintStream out;
+
+  /**
+   * This is the constructor for a Controller
+   * @param model
+   * @param view
+   * @param in
+   * @param out
+   */
+  public Controller(Model model, View view, StringReader in, PrintStream out){
     this.model = model;
     this.view = view;
+    this.in = in;
+    this.out = out;
   }
+
   /**
    * This method calls the fav food prompt method in view and stores the user input in the model
    */
   @Override
   public void findFavFood(){
+
     //print user prompt
     view.printFoodMsg();
     //store user input
     userNum = Integer.parseInt(scanner.nextLine());
     //send to model
     model.setAnswers(userNum);
+
   }
   /**
    * This method calls the fav color prompt method in view and stores the user input in the model
