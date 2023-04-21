@@ -9,7 +9,13 @@ import java.io.*;
 public class ModelTest {
 
   // Create an instance of the class
-  Model modelTest = new Model();
+  private Model modelTest;
+  ArrayList<Integer> list;
+  @Before
+  public void setUp() throws Exception {
+    this.modelTest = new Model();
+    this.list = new ArrayList<Integer>();
+  }
 
   /**
    * This method tests that answers list contains correct answers
@@ -21,14 +27,31 @@ public class ModelTest {
     modelTest.setAnswers(3);
     modelTest.setAnswers(1);
     modelTest.setAnswers(1);
-    ArrayList<Integer> list = new ArrayList<>();
+
     list = modelTest.getAnswersList();
-    for(int i = 0; i < list.size(); i++){
-      System.out.println(list.get(i));
-    }
+    assertEquals((long) 1, (long) list.get(0));
+    assertEquals((long) 2, (long) list.get(1));
+    assertEquals((long) 3, (long) list.get(2));
+    assertEquals((long) 1, (long) list.get(3));
+    assertEquals((long) 1, (long) list.get(4));
+
   }
   /**
-   * This method tests that answers list contains correct answer
+   * This method tests another list of answers and asserts the list contains correct answers
+   */
+  @Test
+  public void testAnotherAnswerList(){
+    modelTest.setAnswers(2);
+    modelTest.setAnswers(2);
+    modelTest.setAnswers(3);
+
+    list = modelTest.getAnswersList();
+    assertEquals((long) 2, (long) list.get(0));
+    assertEquals((long) 2, (long) list.get(1));
+    assertEquals((long) 3, (long) list.get(2));
+  }
+  /**
+   * This method tests that answers list contains only one correct answer
    */
   @Test
   public void testAnswerOneItem(){
@@ -42,7 +65,7 @@ public class ModelTest {
   @Test
   public void testMsgGeneratorHK() {
     int num = 0;
-    assertEquals("Be yourself like Hello Kitty and let your uniqueness shine!",
+    assertEquals("\nBe yourself like Hello Kitty and let your uniqueness shine!\n",
         modelTest.MsgGenerator(num));
   }
 
@@ -52,7 +75,7 @@ public class ModelTest {
   @Test
   public void testMsgGeneratorKeroppi() {
     int num = 5;
-    assertEquals("Embrace your creativity like Keroppi and explore new things.",
+    assertEquals("\nEmbrace your creativity like Keroppi and explore new things.\n",
         modelTest.MsgGenerator(num));
   }
 
@@ -62,7 +85,7 @@ public class ModelTest {
   @Test
   public void testMsgGeneratorMyMelo() {
     int num = 1;
-    assertEquals("Don't let bad days get you down, be as resilient as My Melody!",
+    assertEquals("\nDon't let bad days get you down, be as resilient as My Melody!\n",
         modelTest.MsgGenerator(num));
   }
 

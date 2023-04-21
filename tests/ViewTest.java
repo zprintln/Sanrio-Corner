@@ -8,12 +8,11 @@ import java.io.ByteArrayOutputStream;
 
 public class ViewTest {
 private View viewTest;
-private Model modelTest;
 private ByteArrayOutputStream out;
   @Before
   public void setUp() throws Exception {
-    out = new ByteArrayOutputStream();
-    viewTest = new View(new PrintStream(out));
+    this.out = new ByteArrayOutputStream();
+    this.viewTest = new View(new PrintStream(out));
   }
 
   /**
