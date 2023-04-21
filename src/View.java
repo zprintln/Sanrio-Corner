@@ -1,19 +1,26 @@
-import java.sql.SQLOutput;
 
+import java.io.PrintStream;
 public class View implements IView {
+  private PrintStream out;
+  public View(PrintStream out){
+    this.out = out;
+  }
 
   /**
    * This method displays a Sanrio character
    */
   @Override
   public void displayCharacter(String sanrio){
-    System.out.println("\nYour Sanrio character is: " + sanrio);
-    System.out.println("\n");
-
+    out.println("Your Sanrio character is: " + sanrio);
+    out.println("\n");
   }
+
+  /**
+   * This method prompts the user to choose which Sanrio character to learn about
+   */
   @Override
   public void characterInfoPrompt(){
-    System.out.println("\nWhat character would you like to learn more about: \n"
+    out.println("\nWhat character would you like to learn more about: \n"
         + "\nHello Kitty   Enter: h\n"
         + "Cinnamoroll   Enter: c\n"
         + "Badtz-Maru    Enter: b\n"
@@ -24,9 +31,13 @@ public class View implements IView {
         + "Lala          Enter: l\n"
         + "\nAnswer: \n");
   }
+
+  /**
+   * This method prints an error message to indicate invalid user input
+   */
   @Override
   public void inputErrorMsg(){
-    System.out.println("\nError: Enter a valid input\n");
+    out.println("\nError: Enter a valid input\n");
   }
 
   /**
@@ -37,7 +48,7 @@ public class View implements IView {
   public void printCharacterInfo(char choice){
     switch(choice){
       case 'h':
-        System.out.println(
+        out.println(
             "\nName: Hello Kitty\n"
                 + "Species: Cat\n"
                 + "Gender: Female\n"
@@ -48,7 +59,7 @@ public class View implements IView {
                 + "   She is also very determined and always tries her best.\n");
         break;
       case 'c':
-        System.out.println(
+        out.println(
             "\nName: Cinnamoroll\n"
                 + "Species: Puppy\n"
                 + "Gender: Male\n"
@@ -59,7 +70,7 @@ public class View implements IView {
                 + "  He is also quite curious and loves to explore new places.\n");
         break;
       case 'm':
-        System.out.println(
+        out.println(
             "\nName: My Melody\n"
                 + "Species: Rabbit\n"
                 + "Gender: Female\n"
@@ -70,7 +81,7 @@ public class View implements IView {
                 + "   She is also quite resilient and won't give up easily.\n");
         break;
       case 'k':
-        System.out.println(
+        out.println(
               "\nName: Kuromi\n"
                   + "Species: Rabbit\n"
                   + "Gender: Female\n"
@@ -82,7 +93,7 @@ public class View implements IView {
                   + "   always have their back when they need her.\n");
         break;
       case 'p':
-        System.out.println(
+        out.println(
             "\nName: Pompompurin\n"
                 + "Species: Golden Retriever\n"
                 + "Gender: Male\n"
@@ -93,7 +104,7 @@ public class View implements IView {
                 + "   He's also quite curious and loves to explore his surroundings.\n");
         break;
       case 'b':
-        System.out.println(
+        out.println(
             "\nName: Badtz-Maru\n"
                 + "Species: Penguin\n"
                 + "Gender: Male\n"
@@ -104,7 +115,7 @@ public class View implements IView {
                 + "   He has a rebellious spirit but also a caring side.\n");
         break;
       case 'l':
-        System.out.println(
+        out.println(
             "\nName: Lala\n"
                 + "Species: Star fairy\n"
                 + "Gender: Female\n"
@@ -115,7 +126,7 @@ public class View implements IView {
                 + "   She is also very close to her brother Kiki, they share a strong bond.\n");
         break;
       case 'g':
-        System.out.println(
+        out.println(
             "\nName: Gudetama\n"
                 + "Species: Egg\n"
                 + "Gender: Unknown\n"
@@ -127,7 +138,7 @@ public class View implements IView {
                 + "   He's often seen sleeping or lounging in his shell.\n");
         break;
       default:
-        System.out.println("Type a letter to learn about a character:\n");
+        out.println("Type a letter to learn about a character:\n");
         break;
     }
   }
@@ -137,14 +148,14 @@ public class View implements IView {
    */
   @Override
   public void happyMsgPrompt(){
-    System.out.println("\nEnter a number to from 1-10 to get a positive message: \n");
+    out.print("\nEnter a number from 1-10 to get a positive message: ");
   }
   /**
    * This method prints a positive message
    */
   @Override
   public void printHappyMsg(String msg){
-    System.out.println(msg);
+    out.println(msg);
   }
 
   /**
@@ -152,7 +163,7 @@ public class View implements IView {
    */
   @Override
   public void printFoodMsg(){
-    System.out.println("\nWhat is your favorite food? \n"
+    out.println("\nWhat is your favorite food? \n"
         + "Sushi - 1 \n"
         + "Cotton Candy - 2 \n"
         + "Strawberries - 3 \n"
@@ -165,7 +176,7 @@ public class View implements IView {
    */
   @Override
   public void printColorMsg(){
-    System.out.println("\nWhat is your favorite color? \n"
+    out.println("\nWhat is your favorite color? \n"
         + "Red - 1 \n"
         + "Blue - 2 \n"
         + "Pink - 3 \n"
@@ -178,7 +189,7 @@ public class View implements IView {
    */
   @Override
   public void printActivityMsg(){
-    System.out.println("\nWhat is your favorite activity? \n"
+    out.println("\nWhat is your favorite activity? \n"
         + "Baking - 1 \n"
         + "Exploring - 2 \n"
         + "Playing music - 3 \n"
@@ -191,7 +202,7 @@ public class View implements IView {
    */
   @Override
   public void printItemMsg(){
-    System.out.println("\nWhat is your favorite item? \n"
+    out.println("\nWhat is your favorite item? \n"
         + "Chessboard - 1 \n"
         + "Headphones - 2 \n"
         + "Lip gloss - 3 \n"
@@ -203,7 +214,7 @@ public class View implements IView {
    */
   @Override
   public void printSportMsg(){
-    System.out.println("\nWhat is your favorite item? \n"
+    out.println("\nWhat is your favorite sport? \n"
         + "Chess - 1 \n"
         + "Tennis - 2 \n"
         + "Dance - 3 \n"
