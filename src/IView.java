@@ -1,5 +1,9 @@
 public interface IView {
 /**
+ * This method shows the initial menu for the game
+ */
+void showMenu();
+/**
  * This method displays a Sanrio character
  */
 void displayCharacter(String sanrio);
@@ -48,4 +52,8 @@ void characterInfoPrompt();
  * This method prints an error message if the input is incorrect
  */
 void inputErrorMsg();
+/**
+ * This method prints a goodbye message to the user
+ */
+void printGoodbye();
 }
