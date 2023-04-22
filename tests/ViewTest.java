@@ -14,13 +14,24 @@ private ByteArrayOutputStream out;
     this.out = new ByteArrayOutputStream();
     this.viewTest = new View(new PrintStream(out));
   }
+  /**
+   * This method shows the initial menu for the game
+   */
+  @Test
+  public void testShowGo(){
+    viewTest.showMenu();
+    assertEquals("==============SANRIO CORNER ============\n" +
+     "\n\n" + " Take a quiz! - 1\n\n" + " Print a message to brighten my day - 2\n\n"
+        + "Learn about a Sanrio character - 3\n\n" +
+        "Quit - 4\n\n" + "Enter your choice: ", out.toString());
+  }
 
   /**
    * This test prints the name of character that most relates to the user
    * In this case, Kuromi is printed
    */
   @Test
-  public void displayCharacterKuromi() {
+  public void testDisplayCharacterKuromi() {
     viewTest.displayCharacter("Kuromi");
     assertEquals("Your Sanrio character is: Kuromi\n\n\n", out.toString());
   }
@@ -29,7 +40,7 @@ private ByteArrayOutputStream out;
    * In this case, My Melody is printed
    */
   @Test
-  public void displayCharacterMyMelo() {
+  public void testDisplayCharacterMyMelo() {
     viewTest.displayCharacter("My Melody");
     assertEquals("Your Sanrio character is: My Melody\n\n\n", out.toString());
   }
@@ -39,7 +50,7 @@ private ByteArrayOutputStream out;
    * In this case, Cinnamoroll is printed
    */
   @Test
-  public void displayCharacterCinnamoroll() {
+  public void testDisplayCharacterCinnamoroll() {
     viewTest.displayCharacter("Cinnamoroll");
     assertEquals("Your Sanrio character is: Cinnamoroll\n\n\n", out.toString());
   }
@@ -48,7 +59,7 @@ private ByteArrayOutputStream out;
    * This method prints a character profile for Hello Kitty
    */
   @Test
-  public void printCharacterInfoHelloKitty() {
+  public void testPrintCharacterInfoHelloKitty() {
     viewTest.printCharacterInfo('h');
     assertEquals("\nName: Hello Kitty\n"
         + "Species: Cat\n"
@@ -63,7 +74,7 @@ private ByteArrayOutputStream out;
    * This method prints a character profile for Cinnamoroll
    */
   @Test
-  public void printCharacterInfoCinnamoroll() {
+  public void testPrintCharacterInfoCinnamoroll() {
     viewTest.printCharacterInfo('c');
     assertEquals( "\nName: Cinnamoroll\n"
         + "Species: Puppy\n"
@@ -78,7 +89,7 @@ private ByteArrayOutputStream out;
    * This method prints a character profile for My Melody
    */
   @Test
-  public void printCharacterInfoMyMelody() {
+  public void testPrintCharacterInfoMyMelody() {
     viewTest.printCharacterInfo('m');
     assertEquals("\nName: My Melody\n"
         + "Species: Rabbit\n"
@@ -93,7 +104,7 @@ private ByteArrayOutputStream out;
    * This method prints a character profile for Badtz-Maru
    */
   @Test
-  public void printCharacterInfoBadtz() {
+  public void testPrintCharacterInfoBadtz() {
     viewTest.printCharacterInfo('b');
     assertEquals("\nName: Badtz-Maru\n"
         + "Species: Penguin\n"
@@ -108,7 +119,7 @@ private ByteArrayOutputStream out;
    * This method prints a character profile for Lala
    */
   @Test
-  public void printCharacterInfoLala() {
+  public void testPrintCharacterInfoLala() {
     viewTest.printCharacterInfo('l');
     assertEquals("\nName: Lala\n"
         + "Species: Star fairy\n"
@@ -123,7 +134,7 @@ private ByteArrayOutputStream out;
    * This method prints a character profile for Gudetama
    */
   @Test
-  public void printCharacterInfoGudetama() {
+  public void testPrintCharacterInfoGudetama() {
     viewTest.printCharacterInfo('g');
     assertEquals("\nName: Gudetama\n"
         + "Species: Egg\n"
@@ -139,7 +150,7 @@ private ByteArrayOutputStream out;
    * This method prints a character profile for Kuromi
    */
   @Test
-  public void printCharacterInfoKuromi() {
+  public void testPrintCharacterInfoKuromi() {
     viewTest.printCharacterInfo('k');
     assertEquals("\nName: Kuromi\n"
         + "Species: Rabbit\n"
@@ -155,7 +166,7 @@ private ByteArrayOutputStream out;
    * This method prints a character profile for Pompompurin
    */
   @Test
-  public void printCharacterInfoPomPom() {
+  public void testPrintCharacterInfoPomPom() {
     viewTest.printCharacterInfo('p');
     assertEquals("\nName: Pompompurin\n"
         + "Species: Golden Retriever\n"
@@ -302,4 +313,10 @@ private ByteArrayOutputStream out;
     viewTest.inputErrorMsg();
     assertEquals("\nError: Enter a valid input\n\n", out.toString());
   }
+  @Test
+  public void testPrintGoodBye(){
+    viewTest.printGoodbye();
+    assertEquals("Have a nice day!", out.toString());
+  }
+
 }
