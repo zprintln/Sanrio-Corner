@@ -1,6 +1,5 @@
 import java.io.PrintStream;
 import java.util.Scanner;
-import java.io.Reader;
 import java.io.StringReader;
 public class Controller implements IController{
 
@@ -23,6 +22,49 @@ public class Controller implements IController{
     this.view = view;
     this.in = in;
     this.out = out;
+    this.scanner = new Scanner(System.in); //Is this correct?
+  }
+  /**
+   * This method starts the program!
+   */
+  @Override
+  public void go(){
+    boolean quit = false;
+    while(!quit){
+      //call view to show user menu
+      view.showMenu();
+      //take in user input
+      userNum = Integer.parseInt(scanner.nextLine());
+      //switch to determine action taken
+      switch(userNum){
+        case 1:
+          this.findFavFood();
+          this.findFavColor();
+          this.findFavActivity();
+          this.findFavItem();
+          this.findFavSport();
+          this.findCharacter();
+        break;
+        case 2:
+          view.happyMsgPrompt();
+          int input = Integer.parseInt(scanner.nextLine());
+          while(input < 1 || input > 10){
+            view.inputErrorMsg();
+          }
+          String msg = model.MsgGenerator(input);
+          view.printHappyMsg(msg);
+        break;
+        case 3:
+          view.characterInfoPrompt();
+          this.getCharacterInfo();
+          break;
+        case 4:
+          quit = true;
+          view.printGoodbye();
+          break;
+      }
+    }
+
   }
 
   /**
@@ -76,6 +118,18 @@ public class Controller implements IController{
     //send to model
     model.setAnswers(userNum);
   }
+  /**
+   * This method calls the fav sport prompt method in view and stores the user input in the model
+   */
+  @Override
+  public void findFavSport(){
+    //print user prompt
+    view.printSportMsg();
+    //store user input
+    userNum = Integer.parseInt(scanner.nextLine());
+    //send to model
+    model.setAnswers(userNum);
+  }
 
   /**
    * This method gets the most frequent score from the model and sends it to the view to
@@ -83,13 +137,10 @@ public class Controller implements IController{
    */
   @Override
   public void findCharacter(){
-    //call frequentInt method in model
-    int freqInt = model.getMostFrequentInt();
     //find character match
     String sanrio = model.getSanrioCharacter();
     //send to view to print character
     view.displayCharacter(sanrio);
-
   }
 
   /**
