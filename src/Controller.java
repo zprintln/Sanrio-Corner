@@ -62,24 +62,24 @@ public class Controller implements IController{
           quit = true;
           view.printGoodbye();
           break;
-      }
-    }
-
-  }
+        default:
+          view.inputErrorMsg();
+          break;
+      }//end switch
+    }//end while
+  }//end go method
 
   /**
    * This method calls the fav food prompt method in view and stores the user input in the model
    */
   @Override
   public void findFavFood(){
-
     //print user prompt
     view.printFoodMsg();
     //store user input
     userNum = Integer.parseInt(scanner.nextLine());
     //send to model
     model.setAnswers(userNum);
-
   }
   /**
    * This method calls the fav color prompt method in view and stores the user input in the model
