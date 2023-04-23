@@ -4,6 +4,20 @@ public interface IController {
    */
   void go();
   /**
+   * This method verifies user input is an integer
+   * @return
+   */
+  int validateInputIsInteger();
+
+  /**
+   * This method determines if a given input is within range
+   * @param input the integer input
+   * @param minRange the floor of the range
+   * @param maxRange the ceiling of the range
+   * @return true if input is within range, or false if not
+   */
+  public boolean verifyInputRange(int input, int minRange, int maxRange);
+  /**
    * This method calls the fav food prompt method in view and stores the user input in the model
    */
   void findFavFood();

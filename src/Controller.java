@@ -1,4 +1,5 @@
 import java.io.PrintStream;
+import java.util.IllegalFormatException;
 import java.util.Scanner;
 import java.io.StringReader;
 public class Controller implements IController{
@@ -9,6 +10,7 @@ public class Controller implements IController{
   private Scanner scanner;
   private StringReader in;
   private PrintStream out;
+
 
   /**
    * This is the constructor for a Controller
@@ -34,7 +36,9 @@ public class Controller implements IController{
       //call view to show user menu
       view.showMenu();
       //take in user input
-      userNum = Integer.parseInt(scanner.nextLine());
+      userNum = this.validateInputIsInteger();
+      //validate input is within bounds
+
       //switch to determine action taken
       switch(userNum){
         case 1:
@@ -69,6 +73,7 @@ public class Controller implements IController{
     }//end while
   }//end go method
 
+
   /**
    * This method calls the fav food prompt method in view and stores the user input in the model
    */
@@ -93,6 +98,48 @@ public class Controller implements IController{
     //send to model
     model.setAnswers(userNum);
   }
+
+  /**
+   * This method verifies user input is an integer
+   * @return true if input is valid
+   * @throws IllegalFormatException if input is not an integer
+   */
+  @Override
+  public int validateInputIsInteger() {
+    int userInput = 0;
+    boolean isValid = false;
+    while (!isValid) {
+      try {
+        userInput = Integer.parseInt(scanner.nextLine());
+        isValid = true;
+      } catch (IllegalFormatException e) {
+       view.inputErrorMsg();
+        isValid = false;
+      }
+    }
+    return userInput;
+  }
+
+  /**
+   * This method determines if a given input is within range
+   * @param input the integer input
+   * @param minRange the floor of the range
+   * @param maxRange the ceiling of the range
+   * @return true if input is within range, or false if not
+   */
+  @Override
+  public boolean verifyInputRange(int input, int minRange, int maxRange) {
+    boolean inRange = false;
+    while(!inRange){
+      if(input >= minRange && input <= maxRange){
+        inRange = true;
+      }else{
+        view.inputErrorMsg();
+      }
+    }
+    return inRange;
+  }
+
   /**
    * This method calls the fav activity prompt method in view and stores the user input in the model
    */
