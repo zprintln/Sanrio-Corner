@@ -284,7 +284,6 @@ private ByteArrayOutputStream out;
         + "Dance - 3 \n"
         + "Foosball - 4 \n"
         + "\nAnswer: \n\n", out.toString());
-
   }
 
   /**

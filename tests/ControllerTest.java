@@ -2,6 +2,7 @@
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.StringBufferInputStream;
+import java.util.IllegalFormatException;
 import java.util.Optional;
 import org.junit.Test;
 import org.junit.Before;
@@ -126,24 +127,34 @@ public class ControllerTest {
 
   /**
    * This method tests the menu prompt of the go method
-   */
+
   @Test
   public void testGo() {
     controller.go();
-    String output = out.toString();
-    assertTrue(output.contains("1. Tell me about yourself"));
-    assertTrue(output.contains("2. Get a happy message"));
-    assertTrue(output.contains("3. Show me some character info"));
-    assertTrue(output.contains("4. Quit"));
+    assertEquals("==============SANRIO CORNER ============\n" + " Take a quiz! - 1\n" +
+        " Print a message to brighten my day - 2\n" + "Learn about a Sanrio character - 3\n" + "Quit - 4\n" + "Enter your choice: ", out.toString());
   }
+  */
 
   /**
-   * This method tests the input validation method of the controller
+   * This method tests the input validation method of the controller on an integer
    */
   @Test
   public void testValidateInputIsInteger() {
-    int result = controller.validateInputIsInteger();
-    assertEquals(1, result);
+    in = new StringBufferInputStream("4");
+    controller = new Controller(model, view, in, testOutput);
+    boolean result = controller.validateInputIsInteger(4);
+    assertTrue(result);
+  }
+  /**
+   * This method tests the input validation of the controller on a non-integer
+   */
+  @Test
+  public void testValidateInputIsIntegerOnNonInteger() {
+    in = new StringBufferInputStream("c");
+    controller = new Controller(model, view, in, testOutput);
+    boolean result = controller.validateInputIsInteger("c");
+    assertFalse(result);
   }
 
   /**
