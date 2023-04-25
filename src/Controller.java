@@ -1,15 +1,18 @@
+import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.IllegalFormatException;
 import java.util.Scanner;
-import java.io.StringReader;
+import java.io.InputStream;
 public class Controller implements IController{
 
  private int userNum;
- private Model model;
-  private View view;
+ private IModel model;
+  private IView view;
   private Scanner scanner;
-  private StringReader in;
+  private InputStream in;
   private PrintStream out;
+  private final String charChoices = "hckgmblp";
+  private String sanrio;
 
 
   /**
@@ -19,12 +22,12 @@ public class Controller implements IController{
    * @param in
    * @param out
    */
-  public Controller(Model model, View view, StringReader in, PrintStream out){
+  public Controller(IModel model, IView view, InputStream in, PrintStream out){
     this.model = model;
     this.view = view;
     this.in = in;
     this.out = out;
-    this.scanner = new Scanner(System.in); //Is this correct?
+    this.scanner = new Scanner(in);
   }
   /**
    * This method starts the program!
@@ -100,47 +103,6 @@ public class Controller implements IController{
   }
 
   /**
-   * This method verifies user input is an integer
-   * @return true if input is valid
-   * @throws IllegalFormatException if input is not an integer
-   */
-  @Override
-  public int validateInputIsInteger() {
-    int userInput = 0;
-    boolean isValid = false;
-    while (!isValid) {
-      try {
-        userInput = Integer.parseInt(scanner.nextLine());
-        isValid = true;
-      } catch (IllegalFormatException e) {
-       view.inputErrorMsg();
-        isValid = false;
-      }
-    }
-    return userInput;
-  }
-
-  /**
-   * This method determines if a given input is within range
-   * @param input the integer input
-   * @param minRange the floor of the range
-   * @param maxRange the ceiling of the range
-   * @return true if input is within range, or false if not
-   */
-  @Override
-  public boolean verifyInputRange(int input, int minRange, int maxRange) {
-    boolean inRange = false;
-    while(!inRange){
-      if(input >= minRange && input <= maxRange){
-        inRange = true;
-      }else{
-        view.inputErrorMsg();
-      }
-    }
-    return inRange;
-  }
-
-  /**
    * This method calls the fav activity prompt method in view and stores the user input in the model
    */
   @Override
@@ -185,7 +147,7 @@ public class Controller implements IController{
   @Override
   public void findCharacter(){
     //find character match
-    String sanrio = model.getSanrioCharacter();
+    sanrio = model.getSanrioCharacter();
     //send to view to print character
     view.displayCharacter(sanrio);
   }
@@ -202,9 +164,7 @@ public class Controller implements IController{
     //parse to char
     char userChoice = input.charAt(0);
     //verify that input is correct
-    if(userChoice == 'h' || userChoice == 'c' || userChoice == 'k' ||
-        userChoice == 'g' || userChoice == 'm' || userChoice == 'b' ||
-        userChoice == 'l' || userChoice == 'p'){
+    if(charChoices.indexOf(userChoice) != -1){
 
         //send to view
         view.printCharacterInfo(userChoice);
@@ -216,6 +176,47 @@ public class Controller implements IController{
         getCharacterInfo();
     }
 
+  }
+
+  /**
+   * This method verifies user input is an integer
+   * @return true if input is valid
+   * @throws IllegalFormatException if input is not an integer
+   */
+  @Override
+  public int validateInputIsInteger() {
+    int userInput = 0;
+    boolean isValid = false;
+    while (!isValid) {
+      try {
+        userInput = Integer.parseInt(scanner.nextLine());
+        isValid = true;
+      } catch (IllegalFormatException e) {
+        view.inputErrorMsg();
+        isValid = false;
+      }
+    }
+    return userInput;
+  }
+
+  /**
+   * This method determines if a given input is within range
+   * @param input the integer input
+   * @param minRange the floor of the range
+   * @param maxRange the ceiling of the range
+   * @return true if input is within range, or false if not
+   */
+  @Override
+  public boolean verifyInputRange(int input, int minRange, int maxRange) {
+    boolean inRange = false;
+    while(!inRange){
+      if(input >= minRange && input <= maxRange){
+        inRange = true;
+      }else{
+        view.inputErrorMsg();
+      }
+    }
+    return inRange;
   }
 
 }
