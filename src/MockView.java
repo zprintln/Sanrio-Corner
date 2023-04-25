@@ -1,28 +1,25 @@
 import java.io.PrintStream;
-import java.sql.SQLOutput;
 
 /**
  * This is the mock view class to test the view with the mockController class
  */
 public class MockView implements IView {
 
-  private StringBuffer out;
-
+  private PrintStream out;
 
   /**
    * Constructor for mock view
    */
-  public MockView(StringBuffer out) {
+  public MockView(PrintStream out) {
     this.out = out;
   }
-
   /**
-   * This is a getter for the String Buffer
-   * @return out
+   * This method shows the initial menu for the game
    */
-  public StringBuffer getOut() {
-    return out;
+  public void showMenu(){
+
   }
+  /**
   /**
    * This method displays a Sanrio character
    */
@@ -236,5 +233,12 @@ public class MockView implements IView {
         + "Dance - 3 \n"
         + "Foosball - 4 \n"
         + "\nAnswer: \n");
+  }
+  /**
+   * This method prints a goodbye message to the user
+   */
+  @Override
+  public void printGoodbye(){
+    out.append("Have a nice day!");
   }
 }
