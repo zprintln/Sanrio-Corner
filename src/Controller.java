@@ -53,12 +53,7 @@ public class Controller implements IController {
       //switch to determine action taken
       switch (userNum) {
         case 1:
-          this.findFavFood();
-          this.findFavColor();
-          this.findFavActivity();
-          this.findFavItem();
-          this.findFavSport();
-          this.findCharacter();
+          this.sanrioQuiz();
           break;
         case 2:
           view.happyMsgPrompt();
@@ -84,86 +79,29 @@ public class Controller implements IController {
     }//end while
   }//end go method
 
-
   /**
-   * This method calls the fav food prompt method in view and stores the user input in the model
+   * This method begins the Sanrio quiz
+   * Prompts the user for input by calling view
+   * Verify user input
+   * Sends answer to model to store
+   * Calls view again to display final character
    */
   @Override
-  public void findFavFood() {
-    //print user prompt
-    view.printFoodMsg();
-    //store user input
-    userInput = getUserInput();
-    while(verifyInputRange(userInput, 1,4) == false){
-      userInput = reEnterInput();
-    }
-    //send to model
-    model.setAnswers(userInput);
-  }
+  public void sanrioQuiz(){
 
-  /**
-   * This method calls the fav color prompt method in view and stores the user input in the model
-   */
-  @Override
-  public void findFavColor() {
-    //print user prompt
-    view.printColorMsg();
-    //store user input
-    userInput = getUserInput();
-    while(verifyInputRange(userInput, 1,4) == false){
-      userInput = reEnterInput();
-    }
-    //send to model
-    model.setAnswers(userInput);
-  }
-
-  /**
-   * This method calls the fav activity prompt method in view and stores the user input in the
-   * model
-   */
-  @Override
-  public void findFavActivity() {
-    //print user prompt
-    view.printActivityMsg();
-    //store user input
-    userInput = getUserInput();
-    while(verifyInputRange(userInput, 1,4) == false){
-      userInput = reEnterInput();
-    }
-    //send to model
-    model.setAnswers(userInput);
-  }
-
-  /**
-   * This method calls the fav item prompt method in view and stores the user input in the model
-   */
-  @Override
-  public void findFavItem() {
-    //print user prompt
-    view.printItemMsg();
-    //store user input
-    userInput = getUserInput();
-    while(verifyInputRange(userInput, 1,4) == false){
-      userInput = reEnterInput();
-    }
-    //send to model
-    model.setAnswers(userInput);
-  }
-
-  /**
-   * This method calls the fav sport prompt method in view and stores the user input in the model
-   */
-  @Override
-  public void findFavSport() {
-    //print user prompt
-    view.printSportMsg();
-    //store user input
-    userInput = getUserInput();
-    while(verifyInputRange(userInput, 1,4) == false){
-      userInput = reEnterInput();
-    }
-    //send to model
-    model.setAnswers(userInput);
+      for(int i = 1; i <=5; i++){
+        //print quiz prompt corresponding with index i
+        view.printQuizPrompts(i);
+        //store user input
+        userInput = getUserInput();
+        //verify input is in range
+        while(verifyInputRange(userInput, 1,4) == false){
+          userInput = reEnterInput();
+        }
+        //send to model
+        model.setAnswers(userInput);
+      }
+      this.findCharacter();
   }
 
   /**
@@ -238,19 +176,23 @@ public class Controller implements IController {
    */
   @Override
   public int getUserInput(){
-    userInput = Integer.parseInt(scanner.nextLine());
-    //validate input is an integer
-    isValid = validateInputIsInteger(userInput);
+    try{
+      userInput = Integer.parseInt(scanner.nextLine());
+      //validate input is an integer
+      isValid = validateInputIsInteger(userInput);
+    }
+    catch(NumberFormatException e){
+      isValid = false;
+    }
     while(!isValid){
-      view.inputErrorMsg();
-      getUserInput();
+      userInput = reEnterInput();
     }
     return userInput;
   }
 
   /**
    * This method prints the input error message and re-prompts the user for input
-   * @return
+   * @return validated userInput
    */
   public int reEnterInput(){
     view.inputErrorMsg();

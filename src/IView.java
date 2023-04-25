@@ -17,6 +17,11 @@ void printCharacterInfo(char choice);
  */
 void printHappyMsg(String msg);
 /**
+ * This method prints the quiz prompt corresponding with the given index
+ * @param index
+ */
+void printQuizPrompts(int index);
+/**
  * This method prints a quiz prompt for fav food
  */
 void printFoodMsg();
@@ -56,4 +61,5 @@ void inputErrorMsg();
  * This method prints a goodbye message to the user
  */
 void printGoodbye();
+
 }

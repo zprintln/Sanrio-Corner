@@ -12,10 +12,9 @@ public class View implements IView {
   @Override
   public void showMenu(){
     out.println("==============SANRIO CORNER ============");
-    out.println("\n");
-    out.println("Take a quiz! - 1\n");
-    out.println("Print a message to brighten the day - 2\n");
-    out.println("Learn about a Sanrio character - 3\n");
+    out.println("Take a quiz! - 1");
+    out.println("Print a message to brighten the day - 2");
+    out.println("Learn about a Sanrio character - 3");
     out.println("Quit - 4\n");
     out.print("Enter your choice: ");
   }
@@ -33,7 +32,7 @@ public class View implements IView {
    */
   @Override
   public void characterInfoPrompt(){
-    out.println("\nWhat character would you like to learn more about: \n"
+    out.print("\nWhat character would you like to learn more about: \n"
         + "\nHello Kitty   Enter: h\n"
         + "Cinnamoroll   Enter: c\n"
         + "Badtz-Maru    Enter: b\n"
@@ -42,7 +41,7 @@ public class View implements IView {
         + "Kuromi        Enter: k\n"
         + "Pompompurin   Enter: p\n"
         + "Lala          Enter: l\n"
-        + "\nAnswer: \n");
+        + "\nAnswer: ");
   }
 
   /**
@@ -50,7 +49,7 @@ public class View implements IView {
    */
   @Override
   public void inputErrorMsg(){
-    out.println("\nError! Enter a valid input: \n");
+    out.print("\nError! Enter a valid input: ");
   }
   /**
    * This method prints a goodbye message to the user
@@ -158,7 +157,7 @@ public class View implements IView {
                 + "   He's often seen sleeping or lounging in his shell.\n");
         break;
       default:
-        out.println("Type a letter to learn about a character:\n");
+        out.print("Type a letter to learn about a character:");
         break;
     }
   }
@@ -179,16 +178,40 @@ public class View implements IView {
   }
 
   /**
+   * This method prints the quiz prompt corresponding with the given index
+   * @param index
+   */
+  @Override
+  public void printQuizPrompts(int index){
+    switch(index){
+      case 1:
+        this.printFoodMsg();
+        break;
+      case 2:
+        this.printColorMsg();
+      break;
+      case 3:
+        this.printActivityMsg();
+      break;
+      case 4:
+        this.printItemMsg();
+      break;
+      case 5:
+        this.printSportMsg();
+      break;
+    }
+  }
+  /**
    * This method prints a quiz prompt for fav food
    */
   @Override
   public void printFoodMsg(){
-    out.println("\nWhat is your favorite food? \n"
+    out.print("\nWhat is your favorite food? \n"
         + "Sushi - 1 \n"
         + "Cotton Candy - 2 \n"
         + "Strawberries - 3 \n"
         + "Dark Chocolate - 4 \n"
-        + "\nAnswer: \n");
+        + "\nAnswer: ");
   }
 
   /**
@@ -196,12 +219,12 @@ public class View implements IView {
    */
   @Override
   public void printColorMsg(){
-    out.println("\nWhat is your favorite color? \n"
+    out.print("\nWhat is your favorite color? \n"
         + "Red - 1 \n"
         + "Blue - 2 \n"
         + "Pink - 3 \n"
         + "Black -4 \n"
-        + "\nAnswer: \n");
+        + "\nAnswer: ");
   }
 
   /**
@@ -209,12 +232,12 @@ public class View implements IView {
    */
   @Override
   public void printActivityMsg(){
-    out.println("\nWhat is your favorite activity? \n"
+    out.print("\nWhat is your favorite activity? \n"
         + "Baking - 1 \n"
         + "Exploring - 2 \n"
         + "Playing music - 3 \n"
         + "Dress-up - 4 \n"
-        + "\nAnswer: \n");
+        + "\nAnswer: ");
   }
 
   /**
@@ -222,23 +245,23 @@ public class View implements IView {
    */
   @Override
   public void printItemMsg(){
-    out.println("\nWhat is your favorite item? \n"
+    out.print("\nWhat is your favorite item? \n"
         + "Chessboard - 1 \n"
         + "Headphones - 2 \n"
         + "Lip gloss - 3 \n"
         + "Skull - 4 \n"
-        + "\nAnswer: \n");
+        + "\nAnswer: ");
   }
   /**
    * This method prints a quiz prompt for fav sport
    */
   @Override
   public void printSportMsg(){
-    out.println("\nWhat is your favorite sport? \n"
+    out.print("\nWhat is your favorite sport? \n"
         + "Chess - 1 \n"
         + "Tennis - 2 \n"
         + "Dance - 3 \n"
         + "Foosball - 4 \n"
-        + "\nAnswer: \n");
+        + "\nAnswer: ");
   }
 }
