@@ -39,7 +39,7 @@ public class Model implements IModel{
    */
   @Override
   public String getSanrioCharacter(){
-    int answer = getMostFrequentInt();
+    int answer = this.getMostFrequentInt();
     if(answer == 1){
       return "Hello Kitty";
     }
@@ -65,7 +65,7 @@ public class Model implements IModel{
 
   /**
    * This method returns the list of
-   * @return
+   * @return list of answers
    */
   @Override
   public ArrayList<Integer> getAnswersList(){

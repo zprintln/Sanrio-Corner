@@ -13,8 +13,8 @@ public class View implements IView {
   public void showMenu(){
     out.println("==============SANRIO CORNER ============");
     out.println("\n");
-    out.println(" Take a quiz! - 1\n");
-    out.println(" Print a message to brighten my day - 2\n");
+    out.println("Take a quiz! - 1\n");
+    out.println("Print a message to brighten the day - 2\n");
     out.println("Learn about a Sanrio character - 3\n");
     out.println("Quit - 4\n");
     out.print("Enter your choice: ");
@@ -50,7 +50,7 @@ public class View implements IView {
    */
   @Override
   public void inputErrorMsg(){
-    out.println("\nError: Enter a valid input\n");
+    out.println("\nError! Enter a valid input: \n");
   }
   /**
    * This method prints a goodbye message to the user
