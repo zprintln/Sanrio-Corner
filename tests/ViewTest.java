@@ -21,8 +21,8 @@ private ByteArrayOutputStream out;
   public void testShowGo(){
     viewTest.showMenu();
     assertEquals("==============SANRIO CORNER ============\n" +
-     "\n\n" + " Take a quiz! - 1\n\n" + " Print a message to brighten my day - 2\n\n"
-        + "Learn about a Sanrio character - 3\n\n" +
+     "Take a quiz! - 1\n" + "Print a message to brighten the day - 2\n"
+        + "Learn about a Sanrio character - 3\n" +
         "Quit - 4\n\n" + "Enter your choice: ", out.toString());
   }
 
@@ -227,7 +227,7 @@ private ByteArrayOutputStream out;
         + "Cotton Candy - 2 \n"
         + "Strawberries - 3 \n"
         + "Dark Chocolate - 4 \n"
-        + "\nAnswer: \n\n", out.toString());
+        + "\nAnswer: ", out.toString());
   }
 
   /**
@@ -241,7 +241,7 @@ private ByteArrayOutputStream out;
         + "Blue - 2 \n"
         + "Pink - 3 \n"
         + "Black -4 \n"
-        + "\nAnswer: \n\n", out.toString());
+        + "\nAnswer: ", out.toString());
   }
 
   /**
@@ -255,7 +255,7 @@ private ByteArrayOutputStream out;
         + "Exploring - 2 \n"
         + "Playing music - 3 \n"
         + "Dress-up - 4 \n"
-        + "\nAnswer: \n\n", out.toString());
+        + "\nAnswer: ", out.toString());
   }
 
   /**
@@ -269,7 +269,7 @@ private ByteArrayOutputStream out;
         + "Headphones - 2 \n"
         + "Lip gloss - 3 \n"
         + "Skull - 4 \n"
-        + "\nAnswer: \n\n", out.toString());
+        + "\nAnswer: ", out.toString());
   }
 
   /**
@@ -283,7 +283,7 @@ private ByteArrayOutputStream out;
         + "Tennis - 2 \n"
         + "Dance - 3 \n"
         + "Foosball - 4 \n"
-        + "\nAnswer: \n\n", out.toString());
+        + "\nAnswer: ", out.toString());
   }
 
   /**
@@ -301,7 +301,7 @@ private ByteArrayOutputStream out;
         + "Kuromi        Enter: k\n"
         + "Pompompurin   Enter: p\n"
         + "Lala          Enter: l\n"
-        + "\nAnswer: \n\n", out.toString());
+        + "\nAnswer: ", out.toString());
   }
 
   /**
