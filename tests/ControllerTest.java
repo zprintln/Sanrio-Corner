@@ -45,17 +45,6 @@ public class ControllerTest {
   }
 
   /**
-   * This method tests the menu prompt of the go method
-
-  @Test
-  public void testGo() {
-    controller.go();
-    assertEquals("==============SANRIO CORNER ============\n" + " Take a quiz! - 1\n" +
-        " Print a message to brighten my day - 2\n" + "Learn about a Sanrio character - 3\n" + "Quit - 4\n" + "Enter your choice: ", out.toString());
-  }
-  */
-
-  /**
    * This method tests the input validation method of the controller on an integer
    */
   @Test
@@ -94,5 +83,10 @@ public class ControllerTest {
     assertFalse(result);
   }
 
-
+  /**
+   * This method tests the quiz method
+   */
+  @Test
+  public void testSanrioQuiz() {
+  }
 }

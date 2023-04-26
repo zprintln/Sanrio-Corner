@@ -20,7 +20,7 @@ private ByteArrayOutputStream out;
   @Test
   public void testShowGo(){
     viewTest.showMenu();
-    assertEquals("==============SANRIO CORNER ============\n" +
+    assertEquals("==============SANRIO CORNER ============\n" + "Welcome! What would you like to do? <3\n\n" +
      "Take a quiz! - 1\n" + "Print a message to brighten the day - 2\n"
         + "Learn about a Sanrio character - 3\n" +
         "Quit - 4\n\n" + "Enter your choice: ", out.toString());
@@ -33,7 +33,8 @@ private ByteArrayOutputStream out;
   @Test
   public void testDisplayCharacterKuromi() {
     viewTest.displayCharacter("Kuromi");
-    assertEquals("Your Sanrio character is: Kuromi\n\n\n", out.toString());
+    assertEquals("Your Sanrio character is: Kuromi\n"
+        + "Learn more about your character match below!\n\n", out.toString());
   }
   /**
    * This test prints the name of character that most relates to the user
@@ -42,7 +43,8 @@ private ByteArrayOutputStream out;
   @Test
   public void testDisplayCharacterMyMelo() {
     viewTest.displayCharacter("My Melody");
-    assertEquals("Your Sanrio character is: My Melody\n\n\n", out.toString());
+    assertEquals("Your Sanrio character is: My Melody\n"
+        + "Learn more about your character match below!\n\n", out.toString());
   }
 
   /**
@@ -52,7 +54,8 @@ private ByteArrayOutputStream out;
   @Test
   public void testDisplayCharacterCinnamoroll() {
     viewTest.displayCharacter("Cinnamoroll");
-    assertEquals("Your Sanrio character is: Cinnamoroll\n\n\n", out.toString());
+    assertEquals("Your Sanrio character is: Cinnamoroll\n" +
+        "Learn more about your character match below!\n\n", out.toString());
   }
 
   /**
@@ -67,8 +70,8 @@ private ByteArrayOutputStream out;
         + "Personality: Sweet, caring, and curious. \n"
         + "Likes: Apples, baking, and spending time with her friends.\n"
         + "Dislikes: Rainy days and being alone.\n"
-        + "\n   Hello Kitty loves making friends and exploring new things. \n"
-        + "   She is also very determined and always tries her best.\n\n", out.toString());
+        + "\nHello Kitty loves making friends and exploring new things. \n"
+        + "She is also very determined and always tries her best.\n\n", out.toString());
   }
   /**
    * This method prints a character profile for Cinnamoroll
@@ -82,8 +85,8 @@ private ByteArrayOutputStream out;
         + "Personality: Cheerful, optimistic, and friendly. \n"
         + "Likes: Flying with his long ears, cinnamon rolls, and spending time with his friends.\n"
         + "Dislikes: Bullies and anyone who is mean to his friends.\n"
-        + " \n  Cinnamoroll loves making new friends and spreading happiness wherever he goes. \n"
-        + "  He is also quite curious and loves to explore new places.\n\n", out.toString());
+        + "\nCinnamoroll loves making new friends and spreading happiness wherever he goes. \n"
+        + "He is also quite curious and loves to explore new places.\n\n", out.toString());
   }
   /**
    * This method prints a character profile for My Melody
@@ -97,8 +100,8 @@ private ByteArrayOutputStream out;
         + "Personality: Sweet, kind-hearted, and gentle. \n"
         + "Likes: Baking, playing the piano, and spending time with her best friend, a mouse named Flat.\n"
         + "Dislikes: Conflict and loud noises.\n"
-        + "\n   My Melody is very shy but loves spending time with her friends and helping others.\n"
-        + "   She is also quite resilient and won't give up easily.\n\n", out.toString());
+        + "\nMy Melody is very shy but loves spending time with her friends and helping others.\n"
+        + "She is also quite resilient and won't give up easily.\n\n", out.toString());
   }
   /**
    * This method prints a character profile for Badtz-Maru
@@ -112,8 +115,8 @@ private ByteArrayOutputStream out;
         + "Personality: Mischevious, sarcastic, and stubborn. \n"
         + "Likes: Playing pranks, music, and martial arts.\n"
         + "Dislikes: Rules and anyone who tells him what to do.\n"
-        + "\n   Badtz-Maru likes to keep things cool and is often seen wearing sunglasses. \n"
-        + "   He has a rebellious spirit but also a caring side.\n\n", out.toString());
+        + "\nBadtz-Maru likes to keep things cool and is often seen wearing sunglasses. \n"
+        + "He has a rebellious spirit but also a caring side.\n\n", out.toString());
   }
   /**
    * This method prints a character profile for Lala
@@ -127,8 +130,8 @@ private ByteArrayOutputStream out;
         + "Personality: Dreamy, kind, and whimsical. \n"
         + "Likes: Star gazing, sleeping in clouds, and spreading happiness.\n"
         + "Dislikes: Negative vibes and anything that would disturb her peace.\n"
-        + "\n   Lala loves exploring the universe and meeting new friends. \n"
-        + "   She is also very close to her brother Kiki, they share a strong bond.\n\n",out.toString());
+        + "\nLala loves exploring the universe and meeting new friends. \n"
+        + "She is also very close to her brother Kiki, they share a strong bond.\n\n",out.toString());
   }
   /**
    * This method prints a character profile for Gudetama
@@ -142,9 +145,9 @@ private ByteArrayOutputStream out;
         + "Personality: Lazy, unmotivated, and apathetic. \n"
         + "Likes: Sleeping, being left alone, and eating egg dishes.\n"
         + "Dislikes: Being poked, prodded, or bothered in any way.\n"
-        + "\n   Gudetama is a little egg with a big personality. \n"
-        + "   He doesn't like to do much and would rather lay around all day. \n"
-        + "   He's often seen sleeping or lounging in his shell.\n\n", out.toString());
+        + "\nGudetama is a little egg with a big personality. \n"
+        + "He doesn't like to do much and would rather lay around all day. \n"
+        + "He's often seen sleeping or lounging in his shell.\n\n", out.toString());
   }
   /**
    * This method prints a character profile for Kuromi
@@ -158,9 +161,9 @@ private ByteArrayOutputStream out;
         + "Personality: Mischievous, sassy, and confident. \n"
         + "Likes: Goth fashion, playing pranks, and collecting skulls.\n"
         + "Dislikes: Being told what to do and anything too cute.\n"
-        + " \n   Kuromi is a bit of a troublemaker but also has a caring side. \n"
-        + "   She enjoys making jokes and teasing her friends, but will \n"
-        + "   always have their back when they need her.\n\n", out.toString());
+        + " \nKuromi is a bit of a troublemaker but also has a caring side. \n"
+        + "She enjoys making jokes and teasing her friends, but will \n"
+        + "always have their back when they need her.\n\n", out.toString());
   }
   /**
    * This method prints a character profile for Pompompurin
@@ -174,8 +177,8 @@ private ByteArrayOutputStream out;
         + "Personality: Happy-go-lucky, easygoing, and friendly. \n"
         + "Likes: Pudding, his brown beret, and his best friend, a mouse named Muffin.\n"
         + "Dislikes: Getting up early, spicy food, and anything too scary.\n"
-        + "\n   Pompom loves napping, eating pudding, and hanging out with his friends. \n"
-        + "   He's also quite curious and loves to explore his surroundings.\n\n", out.toString());
+        + "\nPompom loves napping, eating pudding, and hanging out with his friends. \n"
+        + "He's also quite curious and loves to explore his surroundings.\n\n", out.toString());
   }
 
   /**
@@ -293,7 +296,7 @@ private ByteArrayOutputStream out;
   public void testCharacterInfoPrompt(){
     viewTest.characterInfoPrompt();
     assertEquals("\nWhat character would you like to learn more about: \n"
-        + "\nHello Kitty   Enter: h\n"
+        + "Hello Kitty   Enter: h\n"
         + "Cinnamoroll   Enter: c\n"
         + "Badtz-Maru    Enter: b\n"
         + "My Melody     Enter: m\n"
@@ -310,7 +313,7 @@ private ByteArrayOutputStream out;
   @Test
   public void testInputErrorMsg(){
     viewTest.inputErrorMsg();
-    assertEquals("\nError: Enter a valid input\n\n", out.toString());
+    assertEquals("\nError! Enter a valid input: ", out.toString());
   }
   @Test
   public void testPrintGoodBye(){
