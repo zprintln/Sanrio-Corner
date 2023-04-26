@@ -65,7 +65,6 @@ public class Controller implements IController {
           view.printHappyMsg(happyMsg);
           break;
         case 3:
-          view.characterInfoPrompt();
           this.getCharacterInfo();
           break;
         case 4:
@@ -102,6 +101,7 @@ public class Controller implements IController {
         model.setAnswers(userInput);
       }
       this.findCharacter();
+
   }
 
   /**
@@ -191,9 +191,10 @@ public class Controller implements IController {
   }
 
   /**
-   * This method prints the input error message and re-prompts the user for input
+   * This method calls view to print the input error message and re-prompts the user for input
    * @return validated userInput
    */
+  @Override
   public int reEnterInput(){
     view.inputErrorMsg();
     userInput = getUserInput();

@@ -241,4 +241,9 @@ public class MockView implements IView {
   public void printGoodbye(){
     out.append("Have a nice day!");
   }
+
+  @Override
+  public void printQuizPrompts(int i){
+
+  }
 }

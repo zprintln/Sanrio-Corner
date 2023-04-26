@@ -25,6 +25,12 @@ public interface IController {
   int getUserInput();
 
   /**
+   * This method calls view to print the input error message and re-prompts the user for input
+   * @return validated userInput
+   */
+  int reEnterInput();
+
+  /**
    * This method begins the Sanrio quiz
    * Prompts the user for input by calling view
    * Verify user input
@@ -32,7 +38,10 @@ public interface IController {
    * Calls view again to display final character
    */
    void sanrioQuiz();
-
+  /**
+   * This method gets the most frequent score from the model and sends it to the view to call the
+   * print character method
+   */
   void findCharacter();
 
   /**

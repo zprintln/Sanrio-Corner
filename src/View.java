@@ -12,6 +12,7 @@ public class View implements IView {
   @Override
   public void showMenu(){
     out.println("==============SANRIO CORNER ============");
+    out.println("Welcome! What would you like to do? <3\n");
     out.println("Take a quiz! - 1");
     out.println("Print a message to brighten the day - 2");
     out.println("Learn about a Sanrio character - 3");
@@ -24,7 +25,7 @@ public class View implements IView {
   @Override
   public void displayCharacter(String sanrio){
     out.println("Your Sanrio character is: " + sanrio);
-    out.println("\n");
+    out.println("Learn more about your character match below!\n");
   }
 
   /**
@@ -33,7 +34,7 @@ public class View implements IView {
   @Override
   public void characterInfoPrompt(){
     out.print("\nWhat character would you like to learn more about: \n"
-        + "\nHello Kitty   Enter: h\n"
+        + "Hello Kitty   Enter: h\n"
         + "Cinnamoroll   Enter: c\n"
         + "Badtz-Maru    Enter: b\n"
         + "My Melody     Enter: m\n"
@@ -74,8 +75,8 @@ public class View implements IView {
                 + "Personality: Sweet, caring, and curious. \n"
                 + "Likes: Apples, baking, and spending time with her friends.\n"
                 + "Dislikes: Rainy days and being alone.\n"
-                + "\n   Hello Kitty loves making friends and exploring new things. \n"
-                + "   She is also very determined and always tries her best.\n");
+                + "\nHello Kitty loves making friends and exploring new things. \n"
+                + "She is also very determined and always tries her best.\n");
         break;
       case 'c':
         out.println(
@@ -85,8 +86,8 @@ public class View implements IView {
                 + "Personality: Cheerful, optimistic, and friendly. \n"
                 + "Likes: Flying with his long ears, cinnamon rolls, and spending time with his friends.\n"
                 + "Dislikes: Bullies and anyone who is mean to his friends.\n"
-                + " \n  Cinnamoroll loves making new friends and spreading happiness wherever he goes. \n"
-                + "  He is also quite curious and loves to explore new places.\n");
+                + "\nCinnamoroll loves making new friends and spreading happiness wherever he goes. \n"
+                + "He is also quite curious and loves to explore new places.\n");
         break;
       case 'm':
         out.println(
@@ -96,8 +97,8 @@ public class View implements IView {
                 + "Personality: Sweet, kind-hearted, and gentle. \n"
                 + "Likes: Baking, playing the piano, and spending time with her best friend, a mouse named Flat.\n"
                 + "Dislikes: Conflict and loud noises.\n"
-                + "\n   My Melody is very shy but loves spending time with her friends and helping others.\n"
-                + "   She is also quite resilient and won't give up easily.\n");
+                + "\nMy Melody is very shy but loves spending time with her friends and helping others.\n"
+                + "She is also quite resilient and won't give up easily.\n");
         break;
       case 'k':
         out.println(
@@ -107,9 +108,9 @@ public class View implements IView {
                   + "Personality: Mischievous, sassy, and confident. \n"
                   + "Likes: Goth fashion, playing pranks, and collecting skulls.\n"
                   + "Dislikes: Being told what to do and anything too cute.\n"
-                  + " \n   Kuromi is a bit of a troublemaker but also has a caring side. \n"
-                  + "   She enjoys making jokes and teasing her friends, but will \n"
-                  + "   always have their back when they need her.\n");
+                  + " \nKuromi is a bit of a troublemaker but also has a caring side. \n"
+                  + "She enjoys making jokes and teasing her friends, but will \n"
+                  + "always have their back when they need her.\n");
         break;
       case 'p':
         out.println(
@@ -119,8 +120,8 @@ public class View implements IView {
                 + "Personality: Happy-go-lucky, easygoing, and friendly. \n"
                 + "Likes: Pudding, his brown beret, and his best friend, a mouse named Muffin.\n"
                 + "Dislikes: Getting up early, spicy food, and anything too scary.\n"
-                + "\n   Pompom loves napping, eating pudding, and hanging out with his friends. \n"
-                + "   He's also quite curious and loves to explore his surroundings.\n");
+                + "\nPompom loves napping, eating pudding, and hanging out with his friends. \n"
+                + "He's also quite curious and loves to explore his surroundings.\n");
         break;
       case 'b':
         out.println(
@@ -130,8 +131,8 @@ public class View implements IView {
                 + "Personality: Mischevious, sarcastic, and stubborn. \n"
                 + "Likes: Playing pranks, music, and martial arts.\n"
                 + "Dislikes: Rules and anyone who tells him what to do.\n"
-                + "\n   Badtz-Maru likes to keep things cool and is often seen wearing sunglasses. \n"
-                + "   He has a rebellious spirit but also a caring side.\n");
+                + "\nBadtz-Maru likes to keep things cool and is often seen wearing sunglasses. \n"
+                + "He has a rebellious spirit but also a caring side.\n");
         break;
       case 'l':
         out.println(
@@ -141,8 +142,8 @@ public class View implements IView {
                 + "Personality: Dreamy, kind, and whimsical. \n"
                 + "Likes: Star gazing, sleeping in clouds, and spreading happiness.\n"
                 + "Dislikes: Negative vibes and anything that would disturb her peace.\n"
-                + "\n   Lala loves exploring the universe and meeting new friends. \n"
-                + "   She is also very close to her brother Kiki, they share a strong bond.\n");
+                + "\nLala loves exploring the universe and meeting new friends. \n"
+                + "She is also very close to her brother Kiki, they share a strong bond.\n");
         break;
       case 'g':
         out.println(
@@ -152,9 +153,9 @@ public class View implements IView {
                 + "Personality: Lazy, unmotivated, and apathetic. \n"
                 + "Likes: Sleeping, being left alone, and eating egg dishes.\n"
                 + "Dislikes: Being poked, prodded, or bothered in any way.\n"
-                + "\n   Gudetama is a little egg with a big personality. \n"
-                + "   He doesn't like to do much and would rather lay around all day. \n"
-                + "   He's often seen sleeping or lounging in his shell.\n");
+                + "\nGudetama is a little egg with a big personality. \n"
+                + "He doesn't like to do much and would rather lay around all day. \n"
+                + "He's often seen sleeping or lounging in his shell.\n");
         break;
       default:
         out.print("Type a letter to learn about a character:");
