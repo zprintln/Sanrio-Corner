@@ -1,4 +1,3 @@
-
 import java.io.ByteArrayOutputStream;
 import java.io.StringBufferInputStream;
 import org.junit.Test;
@@ -326,5 +325,13 @@ public class ControllerTest {
   public void testGetCharacterInfoInvalidInput() {
     view.printCharacterInfo('z');
     assertEquals("Type a valid letter to learn about a character", out.toString());
+  }
+  /**
+   * This test method tests the printing of the error message using the mock view
+   */
+  @Test
+  public void testErrorMsg(){
+    view.inputErrorMsg();
+    assertEquals("Error msg test", out.toString());
   }
 }
