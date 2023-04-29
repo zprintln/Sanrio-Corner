@@ -1,4 +1,5 @@
 # Sanrio Corner Java Project README
+![_](https://user-images.githubusercontent.com/98183566/235280978-6b4e04ca-dda7-4a6e-8b94-de4fd82da234.jpeg)
 
 This project is a Java program that allows users to interact with the Sanrio characters by taking a quiz and getting information about their favorite characters.
 
