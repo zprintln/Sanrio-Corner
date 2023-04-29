@@ -1,8 +1,8 @@
 
 import java.io.PrintStream;
 /**
- * This class represents the view and is in charge of displaying all user-facing information
- * The View class implements all methods of the IView interface
+ * This class represents the View and is in charge of displaying all user-facing information.
+ * The View class implements all methods of the IView interface.
  */
 public class View implements IView {
   private PrintStream out;

@@ -1,3 +1,7 @@
+/**
+ * This is the interface for the View.
+ * It contains all required methods for the View class.
+ */
 public interface IView {
 /**
  * This method shows the initial menu for the game
