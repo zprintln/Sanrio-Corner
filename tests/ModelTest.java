@@ -1,11 +1,10 @@
 import static org.junit.Assert.*;
-
 import java.util.ArrayList;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import java.io.*;
-
+/**
+ * This test class tests all the methods of the Model
+ */
 public class ModelTest {
 
   // Create an instance of the class

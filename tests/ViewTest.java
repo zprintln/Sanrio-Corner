@@ -1,11 +1,12 @@
 import static org.junit.Assert.*;
-import java.io.Reader;
-import java.io.StringReader;
 import org.junit.Before;
 import org.junit.Test;
 import java.io.PrintStream;
 import java.io.ByteArrayOutputStream;
 
+/**
+ * This test class tests all the methods in the View class
+ */
 public class ViewTest {
 private View viewTest;
 private ByteArrayOutputStream out;
@@ -180,7 +181,14 @@ private ByteArrayOutputStream out;
         + "\nPompom loves napping, eating pudding, and hanging out with his friends. \n"
         + "He's also quite curious and loves to explore his surroundings.\n\n", out.toString());
   }
-
+  /**
+   * This method tests the default message printed on a non-valid char entered when getting character info
+   */
+  @Test
+  public void testGetCharacterInfoInvalidInput() {
+    viewTest.printCharacterInfo('z');
+    assertEquals("Type a valid letter to learn about a character:", out.toString());
+  }
   /**
    *This method tests the prompt for the happy message
    */
@@ -308,13 +316,17 @@ private ByteArrayOutputStream out;
   }
 
   /**
-   * This method tests printing an error message
+   * This test method tests printing an error message
    */
   @Test
   public void testInputErrorMsg(){
     viewTest.inputErrorMsg();
     assertEquals("\nError! Enter a valid input: ", out.toString());
   }
+
+  /**
+   * This test method tests printing the goodbye message
+   */
   @Test
   public void testPrintGoodBye(){
     viewTest.printGoodbye();
