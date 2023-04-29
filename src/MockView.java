@@ -27,7 +27,6 @@ public class MockView implements IView {
   @Override
   public void displayCharacter(String sanrio){
     out.print("Display test sanrio: " + sanrio);
-
   }
   /**
    * This method prompts the user to choose which Sanrio character to learn about
@@ -46,7 +45,7 @@ public class MockView implements IView {
 
   /**
    * This method prints a Sanrio character info based on user choice
-   * @param choice
+   * @param choice the user choice of character
    */
   @Override
   public void printCharacterInfo(char choice){
@@ -150,6 +149,10 @@ public class MockView implements IView {
     out.print("Have a nice day!");
   }
 
+  /**
+   * This method prints the mock quiz prompts
+   * @param i index of the questions
+   */
   @Override
   public void printQuizPrompts(int i){
     switch(i){

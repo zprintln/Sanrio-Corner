@@ -22,10 +22,8 @@ public class Controller implements IController {
   private String happyMsg;
   private String strInput;
 
-
   /**
    * This is the constructor for a Controller
-   *
    * @param model
    * @param view
    * @param in
@@ -158,7 +156,6 @@ public class Controller implements IController {
   }
   /**
    * This method determines if a given input is within range
-   *
    * @param input the integer input
    * @param minRange the floor of the range
    * @param maxRange the ceiling of the range

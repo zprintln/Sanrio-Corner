@@ -65,8 +65,8 @@ public class View implements IView {
   }
 
   /**
-   * This method prints a Sanrio character info based on user choice
-   * @param choice
+   * This method prints the Sanrio character info bios
+   * @param choice the user choice of character to learn about
    */
   @Override
   public void printCharacterInfo(char choice){
