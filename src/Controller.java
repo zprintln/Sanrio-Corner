@@ -1,8 +1,11 @@
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.IllegalFormatException;
 import java.util.Scanner;
-import java.io.InputStream;
+
+/**
+ * This class represents the controller of the project, handling user input and making calls to the model and view respectively
+ * This Controller class implements all methods of the IController interface
+ */
 public class Controller implements IController {
 
   private IModel model;
@@ -15,7 +18,6 @@ public class Controller implements IController {
   private int userInput;
   private int userNum;
   private boolean isValid = false;
-  private boolean inRange = false;
   private boolean quit = false;
   private String happyMsg;
   private String strInput;

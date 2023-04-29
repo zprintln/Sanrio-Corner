@@ -1,5 +1,9 @@
 
 import java.io.PrintStream;
+/**
+ * This class represents the view and is in charge of displaying all user-facing information
+ * The View class implements all methods of the IView interface
+ */
 public class View implements IView {
   private PrintStream out;
   public View(PrintStream out){
@@ -158,7 +162,7 @@ public class View implements IView {
                 + "He's often seen sleeping or lounging in his shell.\n");
         break;
       default:
-        out.print("Type a letter to learn about a character:");
+        out.print("Type a valid letter to learn about a character:");
         break;
     }
   }

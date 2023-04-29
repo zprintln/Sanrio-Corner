@@ -1,4 +1,9 @@
 import java.util.ArrayList;
+
+/**
+ * This Mock Model is used for testing of the Controller class
+ *  It implements all methods of the IModel interface
+ */
 public class MockModel implements IModel {
 
   private ArrayList<Integer> answers = new ArrayList<>();
