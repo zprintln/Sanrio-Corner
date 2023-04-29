@@ -3,8 +3,8 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
- * This class represents the controller of the project, handling user input and making calls to the model and view respectively
- * This Controller class implements all methods of the IController interface
+ * This class represents the Controller of the project, handling user input and making calls to the model and view respectively.
+ * This Controller class implements all methods of the IController interface.
  */
 public class Controller implements IController {
 

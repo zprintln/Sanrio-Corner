@@ -1,6 +1,9 @@
 import java.util.ArrayList;
-import java.util.Random;
 
+/**
+ * This class represents the Model and is in charge of storing and handling data passed in by the controller.
+ * The Model class implements all methods of the IModel interface.
+ */
 public class Model implements IModel{
   //declare an array to store answer choices in
   private ArrayList<Integer> answers = new ArrayList<>();

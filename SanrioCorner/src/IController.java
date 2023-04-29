@@ -1,3 +1,7 @@
+/**
+ * This is the interface for the Controller.
+ * It contains all required methods for the Controller class.
+ */
 public interface IController {
   /**
    * This method starts the program!

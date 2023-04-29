@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 /**
- * This test class tests all the methods of the Model
+ * This test class tests all the methods of the Model.
  */
 public class ModelTest {
 
@@ -17,7 +17,7 @@ public class ModelTest {
   }
 
   /**
-   * This method tests that answers list contains correct answers
+   * This method tests that answers list contains correct answers.
    */
   @Test
   public void testAnswerList(){

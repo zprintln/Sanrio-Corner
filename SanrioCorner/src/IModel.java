@@ -1,5 +1,8 @@
 import java.util.ArrayList;
-
+/**
+ * This is the interface for the Model.
+ * It contains all required methods for the Model class.
+ */
 public interface IModel {
 
   /**
